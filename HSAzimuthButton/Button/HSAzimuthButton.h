@@ -8,8 +8,10 @@
 /**
  自定义按钮HSAzimuthButton
  显示双标题，调整标题的显示的位置方向及其间隔
+ 使用前记得导入Masonry库
  */
 #import <UIKit/UIKit.h>
+#import <Masonry.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -48,6 +50,11 @@ typedef NS_ENUM(NSInteger, HSAzimuthButtonDirection) {
  默认值：16px
  */
 @property (nonatomic, assign) CGFloat contentMarin;
+/**
+ 主副标题之间的间隔
+ 默认值：2px
+ */
+@property (nonatomic, assign) CGFloat titleMarin;
 
 @end
 

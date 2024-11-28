@@ -6,7 +6,6 @@
 //
 
 #import "HSAzimuthButton.h"
-#import <Masonry.h>
 
 @interface HSAzimuthButton()
 
@@ -39,6 +38,7 @@
 
 - (void)initUI{
     _contentMarin = 16;
+    _titleMarin = 2;
     _azimuthButtonDirection = HSAzimuthButtonCenter;
     
     [self addSubview:self.backgroundImageView];
@@ -82,13 +82,13 @@
                 make.left.greaterThanOrEqualTo(self);
                 make.right.lessThanOrEqualTo(self);
                 make.centerX.equalTo(self);
-                make.bottom.equalTo(self.mas_centerY);
+                make.bottom.equalTo(self.mas_centerY).offset(-_titleMarin/2);
             }];
             
             [self.subTitleLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
                 make.left.greaterThanOrEqualTo(self);
                 make.right.lessThanOrEqualTo(self);
-                make.top.equalTo(self.mas_centerY);
+                make.top.equalTo(self.mas_centerY).offset(_titleMarin/2);
                 make.centerX.equalTo(self.mainTitleLabel);
             }];
         }
@@ -105,7 +105,7 @@
             [self.subTitleLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
                 make.left.greaterThanOrEqualTo(self);
                 make.right.lessThanOrEqualTo(self);
-                make.top.equalTo(self.mainTitleLabel.mas_bottom);
+                make.top.equalTo(self.mainTitleLabel.mas_bottom).offset(_titleMarin);
                 make.centerX.equalTo(self.mainTitleLabel);
             }];
         }
@@ -121,7 +121,7 @@
             [self.subTitleLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
                 make.left.equalTo(self.mainTitleLabel);
                 make.right.lessThanOrEqualTo(self);
-                make.top.equalTo(self.mainTitleLabel.mas_bottom);
+                make.top.equalTo(self.mainTitleLabel.mas_bottom).offset(_titleMarin);
             }];
         }
             break;
@@ -130,13 +130,13 @@
             [self.mainTitleLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
                 make.left.equalTo(self).offset(margin);
                 make.right.lessThanOrEqualTo(self);
-                make.bottom.equalTo(self.mas_centerY);
+                make.bottom.equalTo(self.mas_centerY).offset(-_titleMarin/2);;
             }];
             
             [self.subTitleLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
                 make.left.equalTo(self.mainTitleLabel);
                 make.right.lessThanOrEqualTo(self);
-                make.top.equalTo(self.mainTitleLabel.mas_bottom);
+                make.top.equalTo(self.mainTitleLabel.mas_bottom).offset(_titleMarin/2);
             }];
         }
             break;
@@ -151,7 +151,7 @@
             [self.mainTitleLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
                 make.left.equalTo(self.subTitleLabel);
                 make.right.lessThanOrEqualTo(self);
-                make.bottom.equalTo(self.subTitleLabel.mas_top);
+                make.bottom.equalTo(self.subTitleLabel.mas_top).offset(-_titleMarin);
             }];
             
         }
@@ -168,7 +168,7 @@
             [self.mainTitleLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
                 make.left.greaterThanOrEqualTo(self);
                 make.right.lessThanOrEqualTo(self);
-                make.bottom.equalTo(self.subTitleLabel.mas_top);
+                make.bottom.equalTo(self.subTitleLabel.mas_top).offset(-_titleMarin);
                 make.centerX.equalTo(self.subTitleLabel);
             }];
             
@@ -185,7 +185,7 @@
             [self.mainTitleLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
                 make.left.greaterThanOrEqualTo(self);
                 make.right.equalTo(self.subTitleLabel);
-                make.bottom.equalTo(self.subTitleLabel.mas_top);
+                make.bottom.equalTo(self.subTitleLabel.mas_top).offset(-_titleMarin);
             }];
             
         }
@@ -195,13 +195,13 @@
             [self.mainTitleLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
                 make.left.greaterThanOrEqualTo(self);
                 make.right.equalTo(self).offset(-margin);
-                make.bottom.equalTo(self.mas_centerY);
+                make.bottom.equalTo(self.mas_centerY).offset(-_titleMarin/2);
             }];
             
             [self.subTitleLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
                 make.left.greaterThanOrEqualTo(self);
                 make.right.equalTo(self.mainTitleLabel);
-                make.top.equalTo(self.mainTitleLabel.mas_bottom);
+                make.top.equalTo(self.mainTitleLabel.mas_bottom).offset(_titleMarin/2);
             }];
             
         }
@@ -217,7 +217,7 @@
             [self.subTitleLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
                 make.left.greaterThanOrEqualTo(self);
                 make.right.equalTo(self.mainTitleLabel);
-                make.top.equalTo(self.mainTitleLabel.mas_bottom);
+                make.top.equalTo(self.mainTitleLabel.mas_bottom).offset(_titleMarin);
             }];
             
         }
